@@ -16,7 +16,7 @@ var options = {
 };
 
 bot.on(/\/info/, function (msg) {
-  bot.sendMessage(
+  return bot.sendMessage(
     msg.from.id,
     "Что вас конкретно интересует? Выберите варианты ниже:",
     options
