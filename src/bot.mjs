@@ -14,12 +14,8 @@ var options = {
   }),
 };
 
-bot.onText(/\/info/, function (msg) {
-  bot.sendMessage(
-    msg.chat.id,
-    "Что вас конкретно интересует? Выберите варианты ниже:",
-    options
-  );
+bot.onT(/\/info/, (msg) => {
+  msg.reply.text("Что вас конкретно интересует? Выберите варианты ниже:");
 });
 
 export default bot;
