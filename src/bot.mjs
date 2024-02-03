@@ -14,8 +14,6 @@ var options = {
   }),
 };
 
-bot.on(/\/info/, (msg) => {
-  msg.reply.text("Что вас конкретно интересует? Выберите варианты ниже:");
-});
+bot.on(["/info", "/hello"], (msg) => msg.reply.text("Welcome!"));
 
 export default bot;
