@@ -14,7 +14,7 @@ var options = {
   }),
 };
 
-bot.onT(/\/info/, (msg) => {
+bot.on(/\/info/, (msg) => {
   msg.reply.text("Что вас конкретно интересует? Выберите варианты ниже:");
 });
 
