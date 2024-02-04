@@ -60,7 +60,7 @@ bot.on(["location", "contact"], (msg, self) => {
 bot.on("/inlineKeyboard", (msg) => {
   let replyMarkup = bot.inlineKeyboard([
     [
-      bot.inlineButton("callback", { callback: "this_is_data" }),
+      bot.inlineButton("callback", { callback: "callbackQuery" }),
       bot.inlineButton("inline", { inline: "some query" }),
     ],
     [bot.inlineButton("url", { url: "https://telegram.org" })],
@@ -72,7 +72,7 @@ bot.on("/inlineKeyboard", (msg) => {
 });
 
 // Inline button callback
-bot.on("this_is_data", (msg) => {
+bot.on("callbackQuery", (msg) => {
   // User message alert
   return bot.answerCallbackQuery(
     msg.id,
