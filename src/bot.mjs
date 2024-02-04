@@ -73,12 +73,13 @@ bot.on("/inlineKeyboard", (msg) => {
 
 // Inline button callback
 bot.on("callbackQuery", (msg) => {
+  return bot.sendMessage(msg.from.id, "Keyboard example.");
   // User message alert
-  return bot.answerCallbackQuery(
-    msg.id,
-    `Inline button callback: ${msg.data}`,
-    true
-  );
+  //   return bot.answerCallbackQuery(
+  //     msg.id,
+  //     `Inline button callback: ${msg.data}`,
+  //     true
+  //   );
 });
 
 // Inline query
