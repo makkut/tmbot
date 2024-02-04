@@ -71,6 +71,20 @@ bot.on("/inlineKeyboard", (msg) => {
   });
 });
 
+bot.on("/invoice", (msg) => {
+  return bot.sendInvoice(msg.from.id, {
+    title: "alisa",
+    description: "alisa maxi",
+    payload: "",
+    providerToken: process.env.STRIPE_TOKEN,
+    startParameter: "string",
+    currency: "eur",
+    prices: 15,
+    photo:
+      "https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci8xNTQyOWY0YzVhNWQ0YTI3MmU5NmVmZjJjMThiNjEwNz9zaXplPTEwMCZkZWZhdWx0PXJldHJvIn0.SFvUmetU7jHsMaEa8caZ_lsv_w8Xw2e1OhEOHKYRNR8",
+  });
+});
+
 // Inline button callback
 bot.on("callbackQuery", async (msg) => {
   //   return await bot.sendVideo(
