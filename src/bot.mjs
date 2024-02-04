@@ -72,7 +72,7 @@ bot.on("/inlineKeyboard", (msg) => {
 });
 
 // Inline button callback
-bot.on("callbackQuery", (msg) => {
+bot.on("this_is_data", (msg) => {
   // User message alert
   return bot.answerCallbackQuery(
     msg.id,
