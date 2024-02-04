@@ -8,7 +8,7 @@ const bot = new TeleBot(process.env.TELEGRAM_BOT_TOKEN);
 bot.on(/\/info/, function (msg) {
   return bot.sendMessage(
     msg.from.id,
-    "Что вас конкретно интересует? Выберите варианты ниже:"
+    "Что вас конкретно интересует? Выберите варианты ниже:!!!"
   );
 });
 
