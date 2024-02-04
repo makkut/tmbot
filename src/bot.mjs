@@ -73,7 +73,14 @@ bot.on("/inlineKeyboard", (msg) => {
 
 // Inline button callback
 bot.on("callbackQuery", (msg) => {
-  return bot.sendMessage(msg.from.id, "Keyboard example.");
+  let replyMarkup = bot.sendMessage(
+    "Яндекс станция Дуо Макс (https://alice.yandex.ru/station-duo-max#cta-section) за 449€ + 10€ пересылка по Германии с номером отслеживания! Доступные цвета: Чёрная и Бежевая, ждём Красную и Зелёную. По заказу пишем сюда: @andreslarge"
+  );
+  return bot.sendVideo(
+    msg.from.id,
+    "https://yastatic.net/s3/lpc-ext/Alice_website/Chiron/7.12/hero-NY-pc.mp4",
+    { replyMarkup }
+  );
   // User message alert
   //   return bot.answerCallbackQuery(
   //     msg.id,
