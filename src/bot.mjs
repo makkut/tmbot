@@ -60,7 +60,7 @@ bot.on(["location", "contact"], (msg, self) => {
 bot.on("/inlineKeyboard", (msg) => {
   let replyMarkup = bot.inlineKeyboard([
     [
-      bot.inlineButton("callback", { callback: "callbackQuery" }),
+      bot.inlineButton("callback", { callback: "this_is_data" }),
       bot.inlineButton("inline", { inline: "some query" }),
     ],
     [bot.inlineButton("url", { url: "https://telegram.org" })],
@@ -72,15 +72,26 @@ bot.on("/inlineKeyboard", (msg) => {
 });
 
 // Inline button callback
-bot.on("callbackQuery", (msg) => {
-  // User message alert
-  return bot.answerCallbackQuery(
-    msg.id,
-    `Inline button callback: ${msg.data}`,
-    true
-  );
-});
+// bot.on("callbackQuery", (msg) => {
+//   // User message alert
+//   return bot.answerCallbackQuery(
+//     msg.id,
+//     `Inline button callback: ${msg.data}`,
+//     true
+//   );
+// });
 
+bot.on("callbackQuery", (msg) => {
+  const data = msg.data; // получаем данные колбэка
+
+  if (data === "this_is_data") {
+    // Выполняем действия, соответствующие колбэку "this_is_data"
+    bot.sendMessage(
+      msg.from.id,
+      'Вы нажали на кнопку с колбэком "this_is_data".'
+    );
+  }
+});
 // Inline query
 bot.on("inlineQuery", (msg) => {
   const query = msg.query;
